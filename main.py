@@ -1,14 +1,14 @@
-from src.analyzer.question_handler import collect_questions
-from src.analyzer.json_storage import load_questions, save_questions
-from src.analyzer.api_client import send_question
+from ai_question_analyzer.question_handler import collect_questions
+from ai_question_analyzer.json_storage import load_questions, save_questions
+from ai_question_analyzer.api_client import send_question
 print("AI Question Analyzer")
 
 questions = load_questions()
 new_questions = collect_questions()
 for question in new_questions:
-    result = send_question(question)
+    result = send_question(question["question"])
     if result is not None:
-        print(result["title"])
+        question["response"] = result
     else:
         print("Error")
 questions.extend(new_questions)
@@ -16,4 +16,4 @@ save_questions(questions)
 
 print("Stored questions: ")
 for index, question in enumerate(questions, 1):
-    print(index, question)
+    print(index, question["question"])

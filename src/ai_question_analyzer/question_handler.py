@@ -18,6 +18,6 @@ def collect_questions():
             if not is_valid_question(question):
                 print("Error: Question cannot be empty.")
             else:
-                questions.append(question)
+                questions.append({"question": question})
 
     return questions

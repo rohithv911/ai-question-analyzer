@@ -1,6 +1,30 @@
 [
-    "dsbh",
-    "what is python?",
-    "What is Python?",
-    "how is python used?"
+    {
+        "question": "dsbh"
+    },
+    {
+        "question": "what is python?"
+    },
+    {
+        "question": "What is Python?"
+    },
+    {
+        "question": "how is python used?"
+    },
+    {
+        "question": "sdjidsijd"
+    },
+    {
+        "question": "wehiz?"
+    },
+    {
+        "question": "sjkjfdfdsf?"
+    },
+    {
+        "question": "sfhsjfskfh?",
+        "response": {
+            "title": "sfhsjfskfh?",
+            "id": 101
+        }
+    }
 ]
