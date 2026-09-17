@@ -21,3 +21,6 @@ def collect_questions():
                 questions.append({"question": question})
 
     return questions
+
+def search_by_topic(questions, topic):
+    pass

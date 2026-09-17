@@ -8,12 +8,21 @@ new_questions = collect_questions()
 for question in new_questions:
     result = send_question(question["question"])
     if result is not None:
-        question["response"] = result
+        question.update(result)
     else:
         print("Error")
 questions.extend(new_questions)
 save_questions(questions)
 
-print("Stored questions: ")
+print("Stored questions:")
+
 for index, question in enumerate(questions, 1):
     print(index, question["question"])
+
+    if "answer" in question:
+        print("Topic:", question["topic"])
+        print("Category:", question["category"])
+        print("Difficulty:", question["difficulty"])
+        print("Answer:", question["answer"])
+        print("Keywords:", question["keywords"])
+        print()
