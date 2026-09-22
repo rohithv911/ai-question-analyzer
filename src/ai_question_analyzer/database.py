@@ -1,7 +1,9 @@
 import sqlite3
 import json
+import os
 
 def get_connection(database = "data/questions.db"):
+    os.makedirs(os.path.dirname(database), exist_ok=True)
     connection = sqlite3.connect(database)
     connection.row_factory = sqlite3.Row
     return connection
